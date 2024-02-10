@@ -5,16 +5,13 @@ import { getPokemons } from './store/slices/pokemon/trunks';
 export const PokemonApp = () => {
 
 
-  const { isLoading } = useSelector( state => state.isLoading )
-  const { pokemons } = useSelector( state => state.pokemons )
-  const { page } = useSelector( state => state.isLoading )
+  const { isLoading, pokemons, page  } = useSelector( state => state.isLoading )
 
   console.log(pokemons)
 
   const nextPage = () => {
     dispatch( getPokemons(page) )
   }
-
 
   const dispatch = useDispatch();
 
